@@ -8,7 +8,7 @@ It detects LineageOS **for microG** version via adb, download the ROM, extracts 
 
 :warning: **This has only been tested on a FP3 device, at the time of writing with LineageOS for microG 18.1 (November 18, 2021 build) Magisk v23.0** :warning:
 
-## Run on other device
+## Run on an other device
 
 Before to run this script for an other device, please make sure you understand what you run and every step of the script.
 **I won't be responsible if anything goes wrong.**
