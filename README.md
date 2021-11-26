@@ -47,7 +47,8 @@ Check your devices appears when running `adb devices` with device connected via 
 
 Replace the `device` variable by your device code, as [listed here](https://download.lineage.microg.org/).
 
-Run `python magisk_boot_flasher.py`
+Plug your phone via USB and make sure adb is properly set up: your device should appear when running `adb devices`.
+Run `python magisk_boot_flasher.py`.
 
 
 # Run patch boot locally
