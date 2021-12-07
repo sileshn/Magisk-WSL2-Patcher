@@ -68,6 +68,7 @@ def downloadUpdate(device, version):
         for chunk in r.iter_content(chunk_size=4096):
             fout.write(chunk)
 
+    time.sleep(2)  # Hash check was failing
     print('Comparing hashes...', end='', flush=True)
     checkHash(filename)
     print('  [OK]')
@@ -130,12 +131,9 @@ def getCurrentSlot():
     return currentSlot
 
 
-def cleanUp():
-    cmd = ['rm', 'payload.bin', 'boot.img']
+def cleanUp(filename):
+    cmd = ['rm', 'payload.bin', 'boot.img', filename]
     subprocess.run(cmd, stdout=subprocess.DEVNULL)
-
-    cmd = ['rm', 'lineage-*.zip']
-    subprocess.run(cmd, shell=True, stdout=subprocess.DEVNULL)
 
     magiskFilelist = ['kernel', 'kernel_dtb', 'ramdisk.cpio', 'new-boot.img',
                       'stock_boot.img']
@@ -193,7 +191,7 @@ if __name__ == "__main__":
     print('  [OK]')
 
     print('Cleaning up files...', end='', flush=True)
-    cleanUp()
+    cleanUp(filename)
     print('  [OK]')
 
     print('Rebooting device, enjoy Magisk! ;)')
