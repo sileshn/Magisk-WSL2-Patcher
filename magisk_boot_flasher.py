@@ -6,7 +6,6 @@ from tqdm import tqdm
 import subprocess
 import time
 
-
 device = 'FP3'
 magiskdir = 'Magisk-v23.0'
 
@@ -67,8 +66,8 @@ def downloadUpdate(device, version):
                        total=int(r.headers.get('Content-Length'))) as fout:
         for chunk in r.iter_content(chunk_size=4096):
             fout.write(chunk)
+    fout.close()
 
-    time.sleep(2)  # Hash check was failing
     print('Comparing hashes...', end='', flush=True)
     checkHash(filename)
     print('  [OK]')
@@ -84,6 +83,9 @@ def checkHash(filename):
     correcthash = r.text.split(' ')[0]
 
     if filehash != correcthash:
+        print(f'\n[ERR]: {filename}')
+        print(f'[ERR] Computed hash: {filehash}')
+        print(f'[ERR] Should be:     {correcthash}')
         sys.exit("Error: File hash doesn't match ! Aborting.")
 
 
