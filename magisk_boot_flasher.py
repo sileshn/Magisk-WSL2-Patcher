@@ -7,7 +7,7 @@ import subprocess
 import time
 
 device = 'FP3'
-magiskdir = 'Magisk-v23.0'
+magiskdir = 'Magisk-v24.1'
 
 
 def yes_or_no(question, default=None):

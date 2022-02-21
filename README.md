@@ -6,7 +6,7 @@ It has been made to run on Linux x86 or x64 and patch a boot image for an ARM de
 
 It detects LineageOS **for microG** version via adb, download the ROM, extracts `payload.bin` and dumps `boot.img`, patches it with Magisk, and flashes it.
 
-:warning: **This has only been tested on a FP3 device, at the time of writing with LineageOS for microG 18.1 (November 18, 2021 build) Magisk v23.0** :warning:
+:warning: **This has only been tested on a FP3 device, at the time of writing with LineageOS for microG 18.1 (February 20, 2022 build) Magisk v24.1** :warning:
 
 ## Run on an other device
 
@@ -55,7 +55,7 @@ Run `python magisk_boot_flasher.py`.
 
 That's how we can run Magisk's `boot_patch.sh` on Linux x86 or x64 and patch a boot image for an ARM device
 
-> Tested with Magisk v23.0 with FP3
+> Tested with Magisk v24.1 with FP3
 
 * Get Magisk `.apk`
 * Extract it
@@ -63,11 +63,10 @@ That's how we can run Magisk's `boot_patch.sh` on Linux x86 or x64 and patch a b
 Keep in the same folder:
 * `assets/boot_patch.sh` -> `boot_patch.sh`
 * `assets/util_functions.sh` -> `util_functions.sh`
+* `lib/x86_64/libmagiskboot.so` -> `magiskboot`
 * `lib/armeabi-v7a/libmagisk32.so` -> `magisk32`
-* `lib/armeabi-v7a/libmagisk64.so` -> `magisk64`
-* `lib/armeabi-v7a/libmagiskinit.so` -> `magiskinit`
-* `lib/x86/libmagiskboot.so` -> `magiskboot`
-* `lib/armeabi-v7a/libmagiskinit.so` -> `magiskinit`
+* `lib/arm64-v8a/libmagisk64.so` -> `magisk64`
+* `lib/arm64-v8a/libmagiskinit.so` -> `magiskinit`
 
 You can delete all the rest.
 
