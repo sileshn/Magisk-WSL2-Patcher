@@ -7,7 +7,7 @@ import subprocess
 import time
 
 device = 'FP3'
-magiskdir = 'Magisk-v24.1'
+magiskdir = 'Magisk-v24.3'
 
 
 def yes_or_no(question, default=None):
@@ -156,7 +156,7 @@ if __name__ == "__main__":
     installedversion = checkInstalledVersion()
     print('  [OK]')
 
-    print("Seems you have haven't flashed yet Magisk on the new firmaware.")
+    print("Seems you have haven't flashed yet Magisk on the new firmware.")
     if not yes_or_no("Would you like do download the new firmware?"):
         sys.exit()
 
