@@ -1,6 +1,6 @@
 # Overview
 
-This utility aims to simplify patching a boot image for an ARM/ARM64 device on a PC. It is designed to run on WSL2.
+This utility aims to simplify patching a boot image for an ARM/ARM64 device on a PC. It is designed to run on WSL2. This has been tested only on ManjaroWSL.
 
 ## Prerequisites
 
@@ -12,7 +12,8 @@ The script presumes the location of the adb file to be `C:\ProgramData\chocolate
 
 ## How to use
 
-* Plug your phone via USB and make sure adb is properly set up: your device should appear when running `adb devices`.
+* Plug your phone via USB and make sure adb is properly set up. Your device should appear when running the command `<path to adb> devices`.
+* Copy your boot image to the same folder containing the scripts.
 * Run `sh boot_patch.sh boot.img`
-* The patched file `new-boot.img` will/should have the exact sha256 hash as the `magisk_patched-*.img` that's patched using an android device. 
+* The patched file `new-boot.img` will be saved in the same directory. It will/should have the exact sha256 hash as the `magisk_patched-*.img` that's patched using an android device. 
 
