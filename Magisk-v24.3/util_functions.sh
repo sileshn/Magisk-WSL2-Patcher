@@ -36,7 +36,7 @@ grep_get_prop() {
   local result=$(grep_prop $@)
   if [ -z "$result" ]; then
     # Fallback to getprop
-    adb shell getprop "$1"
+    /mnt/c/ProgramData/chocolatey/bin/adb.exe shell getprop "$1"
   else
     echo $result
   fi
@@ -392,7 +392,7 @@ get_flags() {
   fi
   ISENCRYPTED=false
   grep ' /data ' /proc/mounts | grep -q 'dm-' && ISENCRYPTED=true
-  [ "$(adb shell getprop ro.crypto.state)" = "encrypted" ] && ISENCRYPTED=true
+  [ "$(/mnt/c/ProgramData/chocolatey/bin/adb.exe shell getprop ro.crypto.state)" = "encrypted" ] && ISENCRYPTED=true
   if [ -z $KEEPFORCEENCRYPT ]; then
     # No data access means unable to decrypt in recovery
     if $ISENCRYPTED || ! $DATA; then
