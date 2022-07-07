@@ -2,8 +2,8 @@
 # Magisk General Utility Functions
 ############################################
 
-MAGISK_VER='25.0'
-MAGISK_VER_CODE=25000
+MAGISK_VER='25.1'
+MAGISK_VER_CODE=25100
 
 ###################
 # Helper Functions
